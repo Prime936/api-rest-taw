@@ -1,0 +1,7 @@
+[
+    { "hora": "09:00", "estado": "reservado" },
+    { "hora": "10:00", "estado": "disponible" },
+    { "hora": "11:00", "estado": "reservado" },
+    { "hora": "12:00", "estado": "disponible" }
+  ]
+  
