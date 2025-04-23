@@ -4,22 +4,26 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-
 app.set('port', process.env.PORT || 3443);
 
+// Middleware para parsear JSON y formularios
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
+
 app.get('/reservas', (req, res) => {
   const archivoPath = path.join(__dirname, 'reservas.json');
-  
-
   fs.readFile(archivoPath, 'utf8', (err, data) => {
     if (err) {
       console.error('Error leyendo reservas:', err);
       return res.status(500).json({ mensaje: 'Error interno del servidor' });
     }
-
     try {
       const reservas = JSON.parse(data);
       res.status(200).json(reservas);
@@ -29,11 +33,6 @@ app.get('/reservas', (req, res) => {
     }
   });
 });
-
-app.get('/', (req, res) => {
-  res.redirect('/reservas');
-});
-
 
 app.post('/reservas', (req, res) => {
   const { nombre, email, telefono, motivo, hora } = req.body;
@@ -60,5 +59,7 @@ const sslServer = https.createServer(
 );
 
 sslServer.listen(app.get('port'), () =>
-  console.log(`✅ Servidor HTTPS corriendo en puerto ${app.get('port')}`)
+  console.log(`✅ Servidor HTTPS corriendo en https://localhost:${app.get('port')}`)
 );
+
+
