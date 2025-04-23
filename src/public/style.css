@@ -1,1 +1,228 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos globales */
+body {
+  font-family: 'Roboto', sans-serif; /* Fuente moderna y minimalista */
+  line-height: 1.6;
+  background-color: #FAFAFA; /* Fondo claro */
+  color: #333333; /* Texto principal */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.header__title {
+  font-size: 2.5rem;
+  color: #000000; /* Encabezado en negro profundo */
+  margin-bottom: 10px;
+}
+
+.header__subtitle {
+  font-size: 1.2rem;
+  color: #444444; /* Subtítulo en gris oscuro */
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  background-color: #FFFFFF; /* Blanco puro para el formulario */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  margin-bottom: 20px;
+}
+
+/* Formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__section {
+  margin-bottom: 20px;
+}
+
+.form__section-title {
+  font-size: 1.5rem;
+  color: #222222; /* Encabezado de sección en gris carbón */
+  margin-bottom: 10px;
+}
+
+.form__group {
+  margin-bottom: 15px;
+}
+
+.form__label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333333; /* Etiquetas en negro suave */
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form__input,
+.form__textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #E0E0E0; /* Borde gris claro */
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form__input:focus,
+.form__textarea:focus {
+  border-color: #0244be; /* Azul marino al enfocar */
+  outline: none;
+}
+
+.form__textarea {
+  resize: vertical;
+}
+
+/* Botón de envío */
+.form__submit {
+  background-color: #1976D2; /* Azul muy claro */
+  color: #ffffff; /* Texto negro */
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase; /* Texto en mayúsculas */
+  letter-spacing: 1px; /* Espaciado entre letras */
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.form__submit:hover {
+  background-color: #2519d2cb; /* Azul marino al pasar el cursor */
+  color: #FFFFFF; /* Texto blanco */
+  transform: translateY(-2px); /* Elevación sutil */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+.form__submit:active {
+  transform: translateY(0); /* Regresa a la posición original al hacer clic */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra reducida */
+}
+
+
+
+
+
+
+/* Estilos generales del footer */
+.footer {
+  background-color: #222; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  padding: 40px 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Contenedor principal del footer */
+.footer__container {
+  display: flex;
+  justify-content: space-between; /* Distribuye uniformemente las columnas */
+  align-items: flex-start; /* Alinea verticalmente las columnas */
+  max-width: 2000px; /* Ancho máximo ajustado */
+  margin: 0 auto; /* Centrado horizontal */
+  padding: 0 300px; /* Espaciado lateral ampliado para alejar del borde */
+}
+
+/* Espaciador opcional (si lo prefieres) */
+.spacer {
+  height: 100px; /* Altura del espaciador */
+}
+
+/* Secciones del footer */
+.footer__section {
+  width: calc(1000% - 1px); /* Ancho de cada columna con espacio para márgenes */
+  margin-right: 200px; /* Espacio entre las columnas */
+}
+
+.footer__section:last-child {
+  margin-right: 0; /* Elimina el margen derecho de la última columna */
+}
+
+
+/* Títulos de las secciones */
+.footer__section-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff; /* Títulos en blanco */
+}
+
+/* Texto de descripción */
+.footer__text {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: #aaa; /* Texto más suave */
+}
+
+/* Redes sociales */
+.footer__socials {
+  display: flex;
+  gap: 15px; /* Espacio entre íconos */
+  align-items: center; /* Alinea verticalmente los íconos */
+}
+
+.footer__social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Listas de enlaces */
+.footer__list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__list li {
+  margin-bottom: 10px;
+}
+
+.footer__link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+  color: #4cafa7; /* Verde al pasar el cursor */
+}
+
+/* Línea divisoria que abarca toda la página */
+.footer__divider-full {
+  background-color: #ddd; /* Color gris claro */
+  height: 1px; /* Altura de la línea */
+  width: 100%; /* Abarca toda la página */
+  margin: 40px 0; /* Mayor espacio superior e inferior */
+}
+
+/* Derechos de autor */
+.footer__copyright {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777; /* Texto más suave */
+}
+
+
+
 
