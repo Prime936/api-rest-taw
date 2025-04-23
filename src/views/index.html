@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulario de reserva profesional y moderno para empresas importantes.">
+  <title>Formulario de Reserva</title>
 
+  <!-- Vinculación al archivo CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="header__title">Reserva en Línea</h1>
+    <p class="header__subtitle">Completa el formulario para agendar tu cita</p>
+  </header>
+
+  <main class="container">
+    <form class="form" action="reserva.php" method="POST" novalidate>
+
+    <!-- Contenedor principal del formulario -->
+    <div class="form-container">
+      <!-- Sección: Datos Personales -->
+      <section class="form__section">
+        <h2 class="form__section-title">Datos Personales</h2>
+        <div class="form__group">
+          <label for="nombre" class="form__label">Nombre completo:</label>
+          <input type="text" id="nombre" name="nombre" class="form__input" placeholder="Ej: Juan Pérez" required>
+        </div>
+        <div class="form__group">
+          <label for="email" class="form__label">Correo electrónico:</label>
+          <input type="email" id="email" name="email" class="form__input" placeholder="Ej: ejemplo@gmail.com" required>
+        </div>
+        <div class="form__group">
+          <label for="telefono" class="form__label">Teléfono de contacto:</label>
+          <input type="tel" id="telefono" name="telefono" class="form__input" placeholder="Ej: +56 9 1234 5678" pattern="[0-9]{9,15}" required>
+        </div>
+      </section>
+    </div>
+
+
+
+        <!-- Campo de Servicio Legal Disponible -->
+        <div class="form__group">
+          <label for="servicio" class="form__label">Servicio Legal Disponible:</label>
+          <select id="servicio" name="servicio" class="form__input" required>
+            <option value="A.D.C-F">Asesoría en Derecho Civil y Familiar</option>
+            <option value="R.D.P">Representación en Derecho Penal</option>
+            <option value="C.C.E">Consultoría Corporativa y Empresarial</option>
+            <option value="G.L-R.H">Gestión Laboral y de Recursos Humanos</option>
+            <option value="R.A.C">Resolución Alternativa de Conflictos (Mediación y Arbitraje)</option>
+          </select>
+        </div>
+      </select>
+    </div>
+  
+      
+
+      <!-- Sección: Detalles de la Reserva -->
+      <section class="form__section">
+        <h2 class="form__section-title">Detalles de la Reserva</h2>
+        <div class="form__group">
+          <label for="motivo" class="form__label">Motivo de la consulta:</label>
+          <textarea id="motivo" name="motivo" class="form__textarea" rows="4" placeholder="Describe brevemente el motivo de tu reserva" required></textarea>
+        </div>
+        <div class="form__group">
+          <label for="fecha" class="form__label">Fecha y hora deseada:</label>
+          <input type="datetime-local" id="fecha" name="fecha" class="form__input" required>
+        </div>
+      </section>
+
+      <!-- Botón de Envío -->
+      <button type="submit" class="form__submit">Enviar Reserva</button>
+    </form>
+  </main>
+
+<!-- Espaciador opcional (si lo prefieres) -->
+<div class="spacer"></div>
+
+
+
+
+
+  <footer class="footer">
+    <div class="footer__container">
+      <!-- Sección 1: Descripción y Redes Sociales -->
+      <div class="footer__section footer__section--description">
+        <h3 class="footer__section-title">Nuestro Objetivo</h3>
+        <p class="footer__text">
+          Somos un equipo de abogados comprometidos con brindar asesoría legal integral y personalizada. Nuestro objetivo es proteger tus derechos y resolver tus conflictos legales de manera eficiente.
+        </p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-link"><img src="imagenes/yb.png" alt="YouTube" class="footer__social-icon" /></a>
+          <a href="#" class="footer__social-link"><img src="imagenes/gb1.png" alt="Github" class="footer__social-icon" /></a>
+          <a href="#" class="footer__social-link"><img src="imagenes/ig.png" alt="Instagram" class="footer__social-icon" /></a>
+          <a href="#" class="footer__social-link"><img src="imagenes/lk.png" alt="LinkedIn" class="footer__social-icon" /></a>
+        </div>
+      </div>
+  
+      <!-- Sección 2: Enlaces Útiles -->
+      <div class="footer__section footer__section--links">
+        <h3 class="footer__section-title">ENLACES ÚTILES</h3>
+        <ul class="footer__list">
+          <li><a href="#acerca-de" class="footer__link">Acerca de Nosotros</a></li>
+          <li><a href="#servicios" class="footer__link">Servicios Legales</a></li>
+          <li><a href="#contacto" class="footer__link">Contacto</a></li>
+        </ul>
+      </div>
+  
+      <!-- Sección 3: Información Legal -->
+      <div class="footer__section footer__section--legal">
+        <h3 class="footer__section-title">INFORMACIÓN LEGAL</h3>
+        <ul class="footer__list">
+          <li><a href="#politica-privacidad" class="footer__link">Política de Privacidad</a></li>
+          <li><a href="#terminos-servicio" class="footer__link">Términos de Servicio</a></li>
+          <li><a href="#reportar-abuso" class="footer__link">Reportar Abuso</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <!-- Línea divisoria que abarca toda la página -->
+    <div class="footer__divider-full"></div>
+  
+    <!-- Derechos de autor -->
+    <div class="footer__copyright">
+      <p class="footer__copyright-text">&copy; 2025 Nexora - Tu Empresa de Abogados. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
+
+  
+
+</body>
+</html>
