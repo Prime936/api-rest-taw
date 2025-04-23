@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/reservas', (req, res) => {
-  const archivoPath = path.join(__dirname, 'src', 'reservas.json');
+  const archivoPath = path.join(__dirname, 'reservas.json');
   fs.readFile(archivoPath, 'utf8', (err, data) => {
     if (err) {
       console.error('Error leyendo reservas:', err);
@@ -41,10 +41,34 @@ app.post('/reservas', (req, res) => {
     return res.status(400).json({ mensaje: 'Faltan datos obligatorios' });
   }
 
-  console.log('📥 Reserva recibida:', { nombre, email, telefono, motivo, hora });
+  const nuevaReserva = { nombre, email, telefono, motivo, hora };
+  const archivoPath = path.join(__dirname, 'src', 'reservas.json');
 
-  res.status(201).json({ mensaje: 'Reserva recibida con éxito' });
+  fs.readFile(archivoPath, 'utf8', (err, data) => {
+    let reservas = [];
+
+    if (!err) {
+      try {
+        reservas = JSON.parse(data);
+      } catch (e) {
+        console.error('Error al parsear JSON existente, se usará arreglo vacío:', e);
+      }
+    }
+
+    reservas.push(nuevaReserva);
+
+    fs.writeFile(archivoPath, JSON.stringify(reservas, null, 2), (err) => {
+      if (err) {
+        console.error('Error al guardar la reserva:', err);
+        return res.status(500).json({ mensaje: 'No se pudo guardar la reserva' });
+      }
+
+      console.log('✅ Reserva guardada:', nuevaReserva);
+      res.status(201).json({ mensaje: 'Reserva guardada con éxito' });
+    });
+  });
 });
+
 
 app.use((req, res) => {
   res.status(404).json({ mensaje: 'Ruta no encontrada' });
@@ -61,5 +85,7 @@ const sslServer = https.createServer(
 sslServer.listen(app.get('port'), () =>
   console.log(`✅ Servidor HTTPS corriendo en https://localhost:${app.get('port')}`)
 );
+
+
 
 
