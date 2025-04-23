@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/reservas', (req, res) => {
-  const archivoPath = path.join(__dirname, 'reservas.json');
+  const archivoPath = path.join(__dirname, 'src', 'reservas.json');
   fs.readFile(archivoPath, 'utf8', (err, data) => {
     if (err) {
       console.error('Error leyendo reservas:', err);
